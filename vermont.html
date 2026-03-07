@@ -2139,6 +2139,8 @@
                     <h2><span>Siteplan</span> Perumahan</h2>
                     <p>Vermont Cibubur Residence dirancang dengan konsep cluster yang tertata rapi untuk menciptakan lingkungan hunian yang nyaman dan eksklusif. Setiap blok dirancang dengan mempertimbangkan privasi, sirkulasi udara, dan pencahayaan alami yang optimal.</p>
                     <p>Dengan <span class="highlight">row jalan selebar 6-8 meter</span>, akses kendaraan menjadi sangat mudah. Tersedia juga <span class="highlight">fasilitas umum parkir luas</span> yang dapat menampung kendaraan penghuni dan tamu dengan nyaman.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -2420,6 +2422,7 @@
             </div>
         </div>
     </section>
+    
     <section class="kpr-section" id="kpr">
         <div class="container">
             <div class="section-header">
@@ -2470,6 +2473,7 @@
         </div>
     </section>
 
+    <!-- Testimonial Section - Swiper Slide dengan 4 testimoni -->
     <section class="testimonial-section">
         <div class="container">
             <div class="section-header">
@@ -2479,6 +2483,7 @@
             
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
+                    <!-- Testimonial 1 -->
                     <div class="swiper-slide">
                         <div class="testimonial-card">
                             <div class="testimonial-profile">
@@ -2500,7 +2505,9 @@
                             <p class="testimonial-text">"Lokasinya strategis, dekat dengan tol dan sekolah. Keamanan 24 jam bikin keluarga tenang. Sangat puas dengan pelayanan marketingnya."</p>
                         </div>
                     </div>
-                        <div class="swiper-slide">
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="swiper-slide">
                         <div class="testimonial-card">
                             <div class="testimonial-profile">
                                 <div class="testimonial-avatar">
@@ -2508,7 +2515,7 @@
                                 </div>
                                 <div class="testimonial-info">
                                     <h4>Pak Eko</h4>
-                                    <p>Penghuni Blok B</p>
+                                    <p>Penghuni Blok A</p>
                                 </div>
                             </div>
                             <div class="testimonial-rating">
@@ -2522,6 +2529,7 @@
                         </div>
                     </div>
                     
+                    <!-- Testimonial 3 -->
                     <div class="swiper-slide">
                         <div class="testimonial-card">
                             <div class="testimonial-profile">
@@ -2543,10 +2551,36 @@
                             <p class="testimonial-text">"Potensi kenaikan harga bagus, akses mudah ke mana-mana. Saya beli 2 unit untuk investasi. Nilai sewanya juga kompetitif."</p>
                         </div>
                     </div>
+
+                    <!-- Testimonial 4 - Pak David (BARU) -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-profile">
+                                <div class="testimonial-avatar">
+                                    <i class="fas fa-user-circle"></i>
+                                </div>
+                                <div class="testimonial-info">
+                                    <h4>Pak David</h4>
+                                    <p>Pembelian KPR</p>
+                                </div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"Dibantu proses sampai akad, sangat profesional! Tim marketing Vermont sangat membantu dan responsif. Proses KPR lancar tanpa kendala."</p>
+                        </div>
+                    </div>
                 </div>
                 
+                <!-- Navigation buttons -->
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
+                
+                <!-- Pagination dots -->
                 <div class="swiper-pagination"></div>
             </div>
         </div>
@@ -2896,9 +2930,9 @@
             }
         });
         
-        // Initialize Swiper for Testimonials
+        // Initialize Swiper for Testimonials - MENAMPILKAN 2 SLIDE SEKALIGUS
         const swiper = new Swiper('.mySwiper', {
-            slidesPerView: 1,
+            slidesPerView: 1, // Default untuk mobile
             spaceBetween: 20,
             loop: true,
             autoplay: {
@@ -2914,12 +2948,14 @@
                 prevEl: '.swiper-button-prev',
             },
             breakpoints: {
+                // saat lebar >= 640px (tablet)
                 640: {
-                    slidesPerView: 2,
+                    slidesPerView: 2, // Menampilkan 2 slide
                     spaceBetween: 20,
                 },
+                // saat lebar >= 1024px (desktop)
                 1024: {
-                    slidesPerView: 3,
+                    slidesPerView: 2, // Menampilkan 2 slide
                     spaceBetween: 30,
                 },
             },
@@ -2960,15 +2996,15 @@
             if (layoutImg6) layoutImg6.src = layout6Url;
         }
 
-            function setSiteplanImage(siteplanUrl) {
-                 const siteplanImg = document.getElementById('siteplan-img'); // Perbaikan: id yang benar adalah 'siteplan-img'
-                    if (siteplanImg) {
-            siteplanImg.src = siteplanUrl;
-            console.log('Siteplan image updated to:', siteplanUrl);
-        } else {
-            console.log('Element with id "siteplan-img" not found');
+        function setSiteplanImage(siteplanUrl) {
+            const siteplanImg = document.getElementById('siteplan-img');
+            if (siteplanImg) {
+                siteplanImg.src = siteplanUrl;
+                console.log('Siteplan image updated to:', siteplanUrl);
+            } else {
+                console.log('Element with id "siteplan-img" not found');
+            }
         }
-    }
 
         function setGalleryImages(images) {
             // images adalah array of 6 URL gambar
@@ -2994,10 +3030,10 @@
             }
         }
         
-                // Panggil fungsi setelah halaman dimuat
+        // Panggil fungsi setelah halaman dimuat
         document.addEventListener('DOMContentLoaded', function() {
             // Set siteplan image dengan nama file yang benar
-            setSiteplanImage('siteplan.jpeg'); // atau 'stpln.jpeg' sesuai nama file Anda
+            setSiteplanImage('siteplan.jpeg');
             
             // Set layout images (uncomment jika perlu)
             // setLayoutImages('layout1.jpeg', 'layout2.jpeg', 'layout3.jpeg', 'layout4.jpeg', 'layout5.jpeg', 'layout6.jpeg');
@@ -3012,14 +3048,6 @@
             // setPropertyImage(1, 'rmh.jpeg');
             // setPropertyImage(2, 'cstm.jpeg');
         });
-        // Contoh penggunaan (uncomment dan ganti dengan path file Anda):
-        // setLayoutImages('layout1.jpeg', 'layout2.jpeg', 'layout3.jpeg', 'layout4.jpeg', 'layout5.jpeg', 'layout6.jpeg');
-        // setSiteplanImage('siteplan.jpeg');
-        // setGalleryImages(['foto1.jpeg', 'foto2.jpeg', 'foto3.jpeg', 'foto4.jpeg', 'foto5.jpeg', 'foto6.jpeg']);
-        // setPromoImages('promo1.jpeg', 'promo2.jpeg');
-        // setPropertyImage(1, 'rumah-1.jpeg');
-        // setPropertyImage(2, 'rumah-2.jpeg');
     </script>
 </body>
-</html>>
-                       
+</html>
