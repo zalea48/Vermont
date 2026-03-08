@@ -699,14 +699,15 @@
 
         .about-stats {
             display: flex;
-            flex-direction: column;
-            gap: 20px;
+            flex-direction: row;
+            justify-content: space-around;
+            gap: 10px;
             margin-top: 30px;
         }
 
-        @media (min-width: 640px) {
+        @media (min-width: 768px) {
             .about-stats {
-                flex-direction: row;
+                justify-content: flex-start;
                 gap: 40px;
             }
         }
@@ -1214,7 +1215,7 @@
             max-width: 400px;
         }
 
-        /* GALLERY */
+        /* GALLERY - 2 kolom di HP, 3 kolom di laptop */
         .gallery-section {
             padding: 30px 0 50px;
             background: var(--light);
@@ -1256,23 +1257,18 @@
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
+            grid-template-columns: repeat(2, 1fr); /* 2 kolom di HP */
+            gap: 10px;
             margin-top: 30px;
             max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        @media (min-width: 640px) {
+        @media (min-width: 768px) {
             .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (min-width: 992px) {
-            .gallery-grid {
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(3, 1fr); /* 3 kolom di laptop */
+                gap: 20px;
             }
         }
 
@@ -1301,7 +1297,7 @@
             transform: scale(1.05);
         }
 
-        /* FEATURES */
+        /* FEATURES - 2 kolom di HP, 4 kolom di laptop */
         .features {
             background: var(--white);
             padding: 50px 0;
@@ -1315,19 +1311,13 @@
 
         .features-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-
-        @media (min-width: 640px) {
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            grid-template-columns: repeat(2, 1fr); /* 2 kolom di HP */
+            gap: 15px;
         }
 
         @media (min-width: 992px) {
             .features-grid {
-                grid-template-columns: repeat(4, 1fr);
+                grid-template-columns: repeat(4, 1fr); /* 4 kolom di laptop */
                 gap: 24px;
             }
         }
@@ -1335,7 +1325,7 @@
         .feature-card {
             background: var(--white);
             border-radius: var(--radius);
-            padding: 24px 20px;
+            padding: 20px 15px;
             text-align: center;
             transition: var(--transition);
             border: 1px solid var(--border);
@@ -1356,16 +1346,16 @@
         }
 
         .feature-icon {
-            width: 56px;
-            height: 56px;
+            width: 50px;
+            height: 50px;
             background: var(--primary-lighter);
             border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
+            margin: 0 auto 15px;
             color: var(--primary);
-            font-size: 22px;
+            font-size: 20px;
             transition: var(--transition);
         }
 
@@ -1385,27 +1375,29 @@
         }
 
         .feature-title {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 700;
             color: var(--secondary);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         @media (min-width: 768px) {
             .feature-title {
                 font-size: 18px;
+                margin-bottom: 12px;
             }
         }
 
         .feature-desc {
-            font-size: 13px;
+            font-size: 12px;
             color: var(--gray);
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         @media (min-width: 768px) {
             .feature-desc {
                 font-size: 14px;
+                line-height: 1.6;
             }
         }
 
@@ -1529,43 +1521,45 @@
 
         .location-features {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
+            grid-template-columns: repeat(2, 1fr); /* 2 kolom di HP */
+            gap: 12px;
             margin-top: 20px;
-        }
-
-        @media (min-width: 640px) {
-            .location-features {
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
 
         .location-feature {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
         .location-feature i {
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             background: var(--primary-lighter);
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--primary);
-            font-size: 18px;
+            font-size: 16px;
             flex-shrink: 0;
         }
 
+        @media (min-width: 768px) {
+            .location-feature i {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+        }
+
         .location-feature h4 {
-            font-size: 16px;
+            font-size: 15px;
             margin-bottom: 2px;
         }
 
         .location-feature p {
-            font-size: 13px;
+            font-size: 12px;
             color: var(--gray);
         }
 
@@ -1575,7 +1569,7 @@
             margin-top: 30px;
         }
 
-        /* KPR */
+        /* KPR - 2 kolom di HP */
         .kpr-section {
             background: var(--primary-lighter);
             padding: 50px 0;
@@ -1589,15 +1583,9 @@
 
         .kpr-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
+            grid-template-columns: repeat(2, 1fr); /* 2 kolom di HP */
+            gap: 15px;
             margin-bottom: 30px;
-        }
-
-        @media (min-width: 640px) {
-            .kpr-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
 
         @media (min-width: 992px) {
@@ -1611,7 +1599,7 @@
         .kpr-card {
             background: var(--white);
             border-radius: var(--radius);
-            padding: 24px 20px;
+            padding: 20px 15px;
             text-align: center;
             transition: var(--transition);
             box-shadow: var(--shadow);
@@ -1633,16 +1621,16 @@
         }
 
         .kpr-icon {
-            width: 56px;
-            height: 56px;
+            width: 50px;
+            height: 50px;
             background: var(--primary-lighter);
             border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
+            margin: 0 auto 15px;
             color: var(--primary);
-            font-size: 22px;
+            font-size: 20px;
         }
 
         @media (min-width: 768px) {
@@ -1655,27 +1643,29 @@
         }
 
         .kpr-title {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
             color: var(--secondary);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         @media (min-width: 768px) {
             .kpr-title {
                 font-size: 20px;
+                margin-bottom: 12px;
             }
         }
 
         .kpr-desc {
-            font-size: 13px;
+            font-size: 12px;
             color: var(--gray);
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         @media (min-width: 768px) {
             .kpr-desc {
                 font-size: 15px;
+                line-height: 1.6;
             }
         }
 
@@ -1695,7 +1685,7 @@
             margin: 0 auto;
         }
 
-        /* TESTIMONIAL */
+        /* TESTIMONIAL - 2 slide di HP */
         .testimonial-section {
             padding: 50px 0;
             background: linear-gradient(135deg, var(--primary-light) 0%, var(--white) 100%);
@@ -1821,7 +1811,7 @@
         }
 
         .testimonial-info p {
-            font-size: 13px;
+            font-size: 12px;
             color: var(--gray);
         }
 
@@ -1841,7 +1831,7 @@
         }
 
         .testimonial-text {
-            font-size: 13px;
+            font-size: 12px;
             color: var(--gray);
             line-height: 1.6;
             font-style: italic;
@@ -1875,7 +1865,7 @@
         footer {
             background: var(--secondary);
             color: var(--white);
-            padding: 50px 0 30px;
+            padding: 40px 0 20px;
         }
 
         @media (min-width: 768px) {
@@ -1891,7 +1881,7 @@
         .footer-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 30px;
+            gap: 25px;
             margin-bottom: 30px;
         }
 
@@ -1918,12 +1908,12 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .footer-logo-icon {
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             background-color: transparent;
         }
 
@@ -1944,21 +1934,21 @@
         }
 
         .footer-about {
-            font-size: 14px;
+            font-size: 13px;
             opacity: 0.9;
-            line-height: 1.7;
-            margin-bottom: 20px;
+            line-height: 1.6;
+            margin-bottom: 15px;
         }
 
         .social-links {
             display: flex;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
         }
 
         .social-link {
-            width: 36px;
-            height: 36px;
+            width: 32px;
+            height: 32px;
             background: rgba(255, 255, 255, 0.15);
             border-radius: 8px;
             display: flex;
@@ -1982,9 +1972,9 @@
         }
 
         .footer-title {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         @media (min-width: 768px) {
@@ -1999,7 +1989,7 @@
         }
 
         .footer-links li {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         @media (min-width: 768px) {
@@ -2011,7 +2001,7 @@
         .footer-links a {
             color: var(--white);
             opacity: 0.9;
-            font-size: 14px;
+            font-size: 13px;
             transition: var(--transition);
             text-decoration: none;
             display: inline-block;
@@ -2026,9 +2016,9 @@
         .footer-contact li {
             display: flex;
             align-items: flex-start;
-            gap: 12px;
-            margin-bottom: 15px;
-            font-size: 14px;
+            gap: 10px;
+            margin-bottom: 12px;
+            font-size: 13px;
             opacity: 0.9;
         }
 
@@ -2040,8 +2030,8 @@
 
         .footer-contact i {
             color: var(--primary);
-            margin-top: 4px;
-            font-size: 16px;
+            margin-top: 3px;
+            font-size: 14px;
             min-width: 20px;
         }
 
@@ -2049,7 +2039,7 @@
             text-align: center;
             padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.15);
-            font-size: 13px;
+            font-size: 12px;
             opacity: 0.9;
         }
 
@@ -2417,7 +2407,6 @@
 <body>
     <div class="mobile-menu-overlay" id="mobileOverlay"></div>
     
-    <!-- Mobile Menu Panel -->
     <div class="mobile-menu-panel" id="mobileMenuPanel">
         <a href="#hero" class="nav-link">Beranda</a>
         <a href="#properties" class="nav-link">Properti</a>
@@ -2621,7 +2610,6 @@
                     <h2><span>Siteplan</span> Perumahan</h2>
                     <p>Vermont Cibubur Residence dirancang dengan konsep cluster yang tertata rapi untuk menciptakan lingkungan hunian yang nyaman dan eksklusif. Setiap blok dirancang dengan mempertimbangkan privasi, sirkulasi udara, dan pencahayaan alami yang optimal.</p>
                     <p>Dengan <span class="highlight">row jalan selebar 6-8 meter</span>, akses kendaraan menjadi sangat mudah. Tersedia juga <span class="highlight">fasilitas umum parkir luas</span> yang dapat menampung kendaraan penghuni dan tamu dengan nyaman.</p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -2710,6 +2698,7 @@
                 </div>
             </div>
             
+        </div>
     </section>
 
     <section class="gallery-section">
@@ -2879,15 +2868,12 @@
                         </div>
                     </div>
                     
-                    <div style="margin-top: 30px;">
-                        <a href="https://maps.google.com/?q=Vermont+Cibubur+Residence" class="btn btn-outline" target="_blank">
-                            <i class="fas fa-directions"></i> Lihat di Google Maps
-                        </a>
-                    </div>
+                    <a href="https://maps.google.com/?q=Vermont+Cibubur+Residence" class="btn btn-outline" target="_blank">
+                        <i class="fas fa-directions"></i> Lihat di Google Maps
+                    </a>
                 </div>
                 
                 <div class="location-map">
-                    <!-- PASTIKAN ID VIDEO INI BENAR: EnCIi8q6CmU -->
                     <iframe 
                         src="https://www.youtube.com/embed/EnCIi8q6CmU?autoplay=1&mute=1&loop=1&playlist=EnCIi8q6CmU" 
                         title="Video Drone Vermont Cibubur" 
@@ -2896,6 +2882,8 @@
                         allowfullscreen>
                     </iframe>
                 </div>
+            </div>
+        </div>
     </section>
     
     <section class="kpr-section" id="kpr">
@@ -2906,7 +2894,7 @@
             </div>
             
             <div class="kpr-grid">
-                  <div class="kpr-card" onclick="alert('Silahkan hubungi kami via WhatsApp untuk info pembayaran Cash.')">
+                <div class="kpr-card" onclick="alert('Silahkan hubungi kami via WhatsApp untuk info pembayaran Cash.')">
                     <div class="kpr-icon">
                         <i class="fas fa-coins"></i>
                     </div>
@@ -2941,14 +2929,13 @@
             </div>
             
             <div class="kpr-cta">
-                <a href="https://wa.me/6287761426677?text=Saya%20ingin%20konsultasi%20skema%20pembayaran%20Vermont%20Cibubur" class="btn btn-primary" style="padding: 16px 40px; font-size: 16px;">
+                <a href="https://wa.me/6287761426677?text=Saya%20ingin%20konsultasi%20skema%20pembayaran%20Vermont%20Cibubur" class="btn btn-primary">
                     <i class="fab fa-whatsapp"></i> Konsultasi Skema Pembayaran
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Testimonial Section - 4 Testimoni -->
     <section class="testimonial-section">
         <div class="container">
             <div class="section-header">
@@ -2958,7 +2945,6 @@
             
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
-                    <!-- Testimonial 1 -->
                     <div class="swiper-slide">
                         <div class="testimonial-card">
                             <div class="testimonial-profile">
@@ -2971,17 +2957,12 @@
                                 </div>
                             </div>
                             <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
                             <p class="testimonial-text">"Lokasinya strategis, dekat dengan tol dan sekolah. Keamanan 24 jam bikin keluarga tenang. Sangat puas dengan pelayanan marketingnya."</p>
                         </div>
                     </div>
                     
-                    <!-- Testimonial 2 -->
                     <div class="swiper-slide">
                         <div class="testimonial-card">
                             <div class="testimonial-profile">
@@ -2990,21 +2971,16 @@
                                 </div>
                                 <div class="testimonial-info">
                                     <h4>Pak Eko</h4>
-                                    <p>Penghuni Blok B</p>
+                                    <p>Penghuni Blok A</p>
                                 </div>
                             </div>
                             <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
                             <p class="testimonial-text">"Proses pembelian mudah, bisa cash bertahap tanpa bunga. Rumahnya bagus, sesuai dengan yang dijanjikan. Recommended banget!"</p>
                         </div>
                     </div>
                     
-                    <!-- Testimonial 3 -->
                     <div class="swiper-slide">
                         <div class="testimonial-card">
                             <div class="testimonial-profile">
@@ -3017,17 +2993,12 @@
                                 </div>
                             </div>
                             <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
                             </div>
                             <p class="testimonial-text">"Potensi kenaikan harga bagus, akses mudah ke mana-mana. Saya beli 2 unit untuk investasi. Nilai sewanya juga kompetitif."</p>
                         </div>
                     </div>
 
-                    <!-- Testimonial 4 - Pak David -->
                     <div class="swiper-slide">
                         <div class="testimonial-card">
                             <div class="testimonial-profile">
@@ -3040,28 +3011,20 @@
                                 </div>
                             </div>
                             <div class="testimonial-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </div>
                             <p class="testimonial-text">"Dibantu proses sampai akad, sangat profesional! Tim marketing Vermont sangat membantu dan responsif. Proses KPR lancar tanpa kendala."</p>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Navigation buttons -->
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
-                
-                <!-- Pagination dots -->
                 <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer id="contact">
         <div class="container">
             <div class="footer-grid">
@@ -3079,21 +3042,11 @@
                         Vermont Cibubur Residence adalah hunian premium dengan konsep modern di lokasi strategis Cibubur. DP 0% untuk pembeli pertama.
                     </p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/people/Vermont-Cibubur-Residence/61552672361059/#" class="social-link" target="_blank">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://www.instagram.com/vermont_cibubur/" class="social-link" target="_blank">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.youtube.com/@VermontCibubur" class="social-link" target="_blank">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="https://www.tiktok.com/@vermont_cibubur" class="social-link" target="_blank">
-                            <i class="fab fa-tiktok"></i>
-                        </a>
-                        <a href="https://wa.me/6287761426677" class="social-link" target="_blank">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
+                        <a href="https://www.facebook.com/people/Vermont-Cibubur-Residence/61552672361059/#" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/vermont_cibubur/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@VermontCibubur" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@vermont_cibubur" class="social-link" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://wa.me/6287761426677" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 
@@ -3119,26 +3072,11 @@
                 <div class="footer-col">
                     <h3 class="footer-title">Kontak Kami</h3>
                     <ul class="footer-contact">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Jl. Raya Ps. Kranggan, RT.002/RW.004, Jatisampurna, Kec. Jatisampurna, Kota Bekasi, Jawa Barat</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <span>(021) 1234-5678</span>
-                        </li>
-                        <li>
-                            <i class="fab fa-whatsapp"></i>
-                            <span>0877-6142-6677</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <span>info@vermontcibubur.com</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-clock"></i>
-                            <span>Senin - Minggu: 09:00 - 17:00</span>
-                        </li>
+                        <li><i class="fas fa-map-marker-alt"></i> <span>Jl. Raya Ps. Kranggan, RT.002/RW.004, Jatisampurna, Kec. Jatisampurna, Kota Bekasi, Jawa Barat</span></li>
+                        <li><i class="fas fa-phone"></i> <span>(021) 1234-5678</span></li>
+                        <li><i class="fab fa-whatsapp"></i> <span>0877-6142-6677</span></li>
+                        <li><i class="fas fa-envelope"></i> <span>info@vermontcibubur.com</span></li>
+                        <li><i class="fas fa-clock"></i> <span>Senin - Minggu: 09:00 - 17:00</span></li>
                     </ul>
                 </div>
             </div>
@@ -3150,20 +3088,16 @@
         </div>
     </footer>
 
-    <!-- Property Detail Modal -->
     <div class="property-modal" id="propertyModal">
         <div class="modal-content">
             <div class="modal-header">
                 <h3 id="modalTitle">Detail Properti</h3>
                 <button class="modal-close" id="modalClose">&times;</button>
             </div>
-            <div id="modalBody">
-                <!-- Content akan diisi oleh JavaScript -->
-            </div>
+            <div id="modalBody"></div>
         </div>
     </div>
 
-    <!-- Floating Buttons -->
     <a href="https://wa.me/6287761426677" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
@@ -3172,10 +3106,7 @@
         <i class="fas fa-chevron-up"></i>
     </button>
 
-    <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!-- JavaScript -->
     <script>
         // Lightbox Function
         function openLightbox(imageSrc) {
@@ -3192,14 +3123,11 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Close lightbox with ESC key
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeLightbox();
-            }
+            if (e.key === 'Escape') closeLightbox();
         });
 
-        // Mobile Menu Functionality
+        // Mobile Menu
         const menuBtn = document.getElementById('menuBtn');
         const mobileMenuPanel = document.getElementById('mobileMenuPanel');
         const mobileOverlay = document.getElementById('mobileOverlay');
@@ -3208,307 +3136,129 @@
             const isActive = mobileMenuPanel.classList.contains('active');
             mobileMenuPanel.classList.toggle('active');
             mobileOverlay.classList.toggle('active');
-            
-            if (!isActive) {
-                menuBtn.innerHTML = '<i class="fas fa-times"></i>';
-                document.body.style.overflow = 'hidden';
-            } else {
-                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                document.body.style.overflow = 'auto';
-            }
+            menuBtn.innerHTML = isActive ? '<i class="fas fa-bars"></i>' : '<i class="fas fa-times"></i>';
+            document.body.style.overflow = isActive ? 'auto' : 'hidden';
         }
         
         menuBtn.addEventListener('click', toggleMobileMenu);
-        
-        mobileOverlay.addEventListener('click', () => {
-            if (mobileMenuPanel.classList.contains('active')) {
-                toggleMobileMenu();
-            }
-        });
+        mobileOverlay.addEventListener('click', toggleMobileMenu);
         
         document.querySelectorAll('.mobile-menu-panel .nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                if (mobileMenuPanel.classList.contains('active')) {
-                    toggleMobileMenu();
-                }
-            });
+            link.addEventListener('click', toggleMobileMenu);
         });
-        
-        // Smooth scrolling for navigation links
+
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-                
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     e.preventDefault();
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    if (mobileMenuPanel.classList.contains('active')) {
-                        toggleMobileMenu();
-                    }
+                    window.scrollTo({ top: targetElement.offsetTop - 80, behavior: 'smooth' });
                 }
             });
         });
-        
-        // Active link highlighting based on scroll position
-        const sections = document.querySelectorAll('section[id], footer[id]');
-        const navItems = document.querySelectorAll('.nav-link:not(.mobile-menu-panel .nav-link)');
-        
-        window.addEventListener('scroll', () => {
-            let current = '';
-            const scrollPosition = window.scrollY + 100;
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                
-                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navItems.forEach(item => {
-                item.classList.remove('active');
-                const href = item.getAttribute('href');
-                if (href === `#${current}`) {
-                    item.classList.add('active');
-                }
-            });
-        });
-        
-        // Back to Top Button
+
+        // Back to top
         const backToTop = document.getElementById('backToTop');
-        
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTop.style.display = 'flex';
-            } else {
-                backToTop.style.display = 'none';
-            }
+            backToTop.style.display = window.pageYOffset > 300 ? 'flex' : 'none';
         });
-        
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-        
-        // Property Data for Modal
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // Property modal
         const properties = [
-            {
-                id: 1,
-                title: "Vermont Type 80/60-120",
-                price: "Rp 900 Juta",
-                location: "Cibubur",
-                image: "rmh.jpeg",
-                bedrooms: "2-3",
-                bathrooms: 2,
-                area: "80/60-120 m²",
-                description: "Rumah modern 2 lantai dengan desain minimalis. Terdiri dari 2-3 kamar tidur, 2 kamar mandi, ruang keluarga luas, dapur modern, carport 1-2 mobil. Cocok untuk keluarga yang menginginkan kenyamanan.",
-                features: ["2-3 Kamar Tidur", "2 Kamar Mandi", "Carport 1-2 Mobil", "Ruang Keluarga Luas", "Dapur Modern", "Listrik 2200W", "Air PDAM"],
-                badge: "Best Seller"
-            },
-            {
-                id: 2,
-                title: "Vermont Type Custom",
-                price: "Rp 900 Juta - 1.5 Miliar",
-                location: "Cibubur",
-                image: "cstm.jpeg",
-                bedrooms: "3-4",
-                bathrooms: "2-3",
-                area: "80/60-120 m²",
-                description: "Rumah modern dengan desain yang dapat disesuaikan dengan keinginan Anda. Tersedia berbagai pilihan layout dan spesifikasi. Bisa dibangun 1.5 atau 2 lantai sesuai kebutuhan.",
-                features: ["3-4 Kamar Tidur", "2-3 Kamar Mandi", "Carport 2 Mobil", "Desain Custom", "Dapur Modern", "Listrik 2200W", "Air PDAM"],
-                badge: "Custom"
-            }
+            { id:1, title:"Vermont Type 80/60-120", price:"Rp 900 Juta", location:"Cibubur", image:"rmh.jpeg", bedrooms:"2-3", bathrooms:2, area:"80/60-120 m²", description:"Rumah modern 2 lantai dengan desain minimalis. Terdiri dari 2-3 kamar tidur, 2 kamar mandi, ruang keluarga luas, dapur modern, carport 1-2 mobil. Cocok untuk keluarga yang menginginkan kenyamanan.", features:["2-3 Kamar Tidur","2 Kamar Mandi","Carport 1-2 Mobil","Ruang Keluarga Luas","Dapur Modern","Listrik 2200W","Air PDAM"], badge:"Best Seller" },
+            { id:2, title:"Vermont Type Custom", price:"Rp 900 Juta - 1.5 Miliar", location:"Cibubur", image:"cstm.jpeg", bedrooms:"3-4", bathrooms:"2-3", area:"80/60-120 m²", description:"Rumah modern dengan desain yang dapat disesuaikan dengan keinginan Anda. Tersedia berbagai pilihan layout dan spesifikasi. Bisa dibangun 1.5 atau 2 lantai sesuai kebutuhan.", features:["3-4 Kamar Tidur","2-3 Kamar Mandi","Carport 2 Mobil","Desain Custom","Dapur Modern","Listrik 2200W","Air PDAM"], badge:"Custom" }
         ];
-        
-        // Property Detail Modal
+
         const propertyModal = document.getElementById('propertyModal');
         const modalClose = document.getElementById('modalClose');
         const modalTitle = document.getElementById('modalTitle');
         const modalBody = document.getElementById('modalBody');
-        
-        function showPropertyDetail(id) {
+
+        window.showPropertyDetail = function(id) {
             const property = properties.find(p => p.id === id);
             if (!property) return;
-            
             modalTitle.textContent = property.title;
-            
             modalBody.innerHTML = `
                 <div class="modal-property">
-                    <div class="modal-img">
-                        <img src="${property.image}" alt="${property.title}">
-                    </div>
+                    <div class="modal-img"><img src="${property.image}" alt="${property.title}"></div>
                     <div class="modal-info">
                         <div class="modal-price">${property.price}</div>
                         <div class="modal-stats">
-                            <div class="modal-stat">
-                                <i class="fas fa-bed"></i>
-                                <span>${property.bedrooms} Kamar Tidur</span>
-                            </div>
-                            <div class="modal-stat">
-                                <i class="fas fa-bath"></i>
-                                <span>${property.bathrooms} Kamar Mandi</span>
-                            </div>
-                            <div class="modal-stat">
-                                <i class="fas fa-ruler-combined"></i>
-                                <span>Luas: ${property.area}</span>
-                            </div>
-                            <div class="modal-stat">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Lokasi: ${property.location}</span>
-                            </div>
+                            <div class="modal-stat"><i class="fas fa-bed"></i><span>${property.bedrooms} Kamar Tidur</span></div>
+                            <div class="modal-stat"><i class="fas fa-bath"></i><span>${property.bathrooms} Kamar Mandi</span></div>
+                            <div class="modal-stat"><i class="fas fa-ruler-combined"></i><span>Luas: ${property.area}</span></div>
+                            <div class="modal-stat"><i class="fas fa-map-marker-alt"></i><span>Lokasi: ${property.location}</span></div>
                         </div>
-                        
-                        <div class="modal-section">
-                            <h4>Deskripsi</h4>
-                            <p>${property.description}</p>
-                        </div>
-                        
-                        <div class="modal-section">
-                            <h4>Fitur Utama</h4>
-                            <ul class="modal-features">
-                                ${property.features.map(feature => `<li><i class="fas fa-check-circle"></i> ${feature}</li>`).join('')}
-                            </ul>
-                        </div>
-                        
+                        <div class="modal-section"><h4>Deskripsi</h4><p>${property.description}</p></div>
+                        <div class="modal-section"><h4>Fitur Utama</h4><ul class="modal-features">${property.features.map(f => `<li><i class="fas fa-check-circle"></i> ${f}</li>`).join('')}</ul></div>
                         <div class="modal-actions">
-                            <a href="https://wa.me/6287761426677?text=Saya%20tertarik%20dengan%20${encodeURIComponent(property.title)}%20dan%20ingin%20konsultasi%20lebih%20lanjut." 
-                               class="btn btn-primary" style="flex: 1;">
-                                <i class="fab fa-whatsapp"></i> Konsultasi via WhatsApp
-                            </a>
-                            <a href="tel:087761426677" class="btn btn-outline">
-                                <i class="fas fa-phone"></i> Telepon
-                            </a>
+                            <a href="https://wa.me/6287761426677?text=Saya%20tertarik%20dengan%20${encodeURIComponent(property.title)}" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Konsultasi</a>
+                            <a href="tel:087761426677" class="btn btn-outline"><i class="fas fa-phone"></i> Telepon</a>
                         </div>
                     </div>
                 </div>
             `;
-            
             propertyModal.classList.add('active');
             document.body.style.overflow = 'hidden';
-        }
-        
-        // Close modal
+        };
+
         modalClose.addEventListener('click', () => {
             propertyModal.classList.remove('active');
             document.body.style.overflow = 'auto';
         });
-        
+
         propertyModal.addEventListener('click', (e) => {
             if (e.target === propertyModal) {
                 propertyModal.classList.remove('active');
                 document.body.style.overflow = 'auto';
             }
         });
-        
-        // Initialize Swiper for Testimonials
-        const swiper = new Swiper('.mySwiper', {
-            slidesPerView: 1,
-            spaceBetween: 20,
+
+        // Swiper testimonial - 2 slide di HP, 3 di laptop
+        new Swiper('.mySwiper', {
+            slidesPerView: 2,        // default untuk layar kecil (HP)
+            spaceBetween: 10,
             loop: true,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
+            autoplay: { delay: 5000, disableOnInteraction: false },
+            pagination: { el: '.swiper-pagination', clickable: true },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
             breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
-                },
-            },
+                768: { slidesPerView: 3, spaceBetween: 20 }, // tablet/laptop
+                1024: { slidesPerView: 3, spaceBetween: 30 }
+            }
         });
-        
+
         // Animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                }
-            });
-        }, observerOptions);
-        
-        document.querySelectorAll('.feature-card, .property-card, .kpr-card, .layout-card, .gallery-item, .testimonial-card, .promo-card').forEach(el => {
-            observer.observe(el);
-        });
+            entries.forEach(e => e.isIntersecting && e.target.classList.add('animate'));
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.feature-card, .property-card, .kpr-card, .layout-card, .gallery-item, .testimonial-card, .promo-card').forEach(el => observer.observe(el));
 
-        // Function to set custom images (untuk memudahkan ganti gambar)
-        function setLayoutImages(layout1Url, layout2Url, layout3Url, layout4Url, layout5Url, layout6Url) {
-            const layoutImg1 = document.getElementById('layout-img-1');
-            const layoutImg2 = document.getElementById('layout-img-2');
-            const layoutImg3 = document.getElementById('layout-img-3');
-            const layoutImg4 = document.getElementById('layout-img-4');
-            const layoutImg5 = document.getElementById('layout-img-5');
-            const layoutImg6 = document.getElementById('layout-img-6');
-            
-            if (layoutImg1) layoutImg1.src = layout1Url;
-            if (layoutImg2) layoutImg2.src = layout2Url;
-            if (layoutImg3) layoutImg3.src = layout3Url;
-            if (layoutImg4) layoutImg4.src = layout4Url;
-            if (layoutImg5) layoutImg5.src = layout5Url;
-            if (layoutImg6) layoutImg6.src = layout6Url;
+        // Set images (optional)
+        function setLayoutImages(l1,l2,l3,l4,l5,l6) {
+            const ids = ['layout-img-1','layout-img-2','layout-img-3','layout-img-4','layout-img-5','layout-img-6'];
+            ids.forEach((id,i) => { const el = document.getElementById(id); if(el) el.src = arguments[i]; });
         }
+        function setSiteplanImage(url) { const el = document.getElementById('siteplan-img'); if(el) el.src = url; }
+        function setGalleryImages(arr) { for(let i=1;i<=6;i++) { const el = document.getElementById(`gallery-img-${i}`); if(el && arr[i-1]) el.src = arr[i-1]; } }
+        function setPromoImages(p1,p2) { 
+            const el1 = document.getElementById('promo-img-1'); if(el1) el1.src = p1;
+            const el2 = document.getElementById('promo-img-2'); if(el2) el2.src = p2;
+        }
+        function setPropertyImage(id, url) { const el = document.getElementById(`property-img-${id}`); if(el) el.src = url; }
 
-        function setSiteplanImage(siteplanUrl) {
-            const siteplanImg = document.getElementById('siteplan-img');
-            if (siteplanImg) {
-                siteplanImg.src = siteplanUrl;
-                console.log('Siteplan image updated to:', siteplanUrl);
-            } else {
-                console.log('Element with id "siteplan-img" not found');
-            }
-        }
-
-        function setGalleryImages(images) {
-            for (let i = 1; i <= 6; i++) {
-                const imgElement = document.getElementById(`gallery-img-${i}`);
-                if (imgElement && images[i-1]) {
-                    imgElement.src = images[i-1];
-                }
-            }
-        }
-
-        function setPromoImages(promo1Url, promo2Url) {
-            const promo1 = document.getElementById('promo-img-1');
-            const promo2 = document.getElementById('promo-img-2');
-            if (promo1) promo1.src = promo1Url;
-            if (promo2) promo2.src = promo2Url;
-        }
-
-        function setPropertyImage(propertyId, imageUrl) {
-            const imgElement = document.getElementById(`property-img-${propertyId}`);
-            if (imgElement) {
-                imgElement.src = imageUrl;
-            }
-        }
-        
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', () => {
             setSiteplanImage('siteplan.jpeg');
+            // Uncomment berikut jika ingin set gambar dari array
+            // setLayoutImages('layout1.jpeg','layout2.jpeg','layout3.jpeg','layout4.jpeg','layout5.jpeg','layout6.jpeg');
+            // setGalleryImages(['foto1.jpeg','foto2.jpeg','foto3.jpeg','foto4.jpeg','foto5.jpeg','foto6.jpeg']);
+            // setPromoImages('poster.jpeg','pstr.jpeg');
+            // setPropertyImage(1, 'rmh.jpeg');
+            // setPropertyImage(2, 'cstm.jpeg');
         });
     </script>
 </body>
